@@ -8,3 +8,5 @@ yt-dlp
 protobuf
 soundfile
 scipy
+gradio>=4.0.0
+librosa>=0.10.0
