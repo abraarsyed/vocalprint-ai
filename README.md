@@ -94,3 +94,35 @@ python3 accent_detection_cli.py \
   "transcript_sample": " you're a mass of competing short term interests. And so the question is then, well, which short term interest should win out? And the answer to that is none of them. They need to be organized into a hierarchy that makes them functional across time and across individuals. So like a two year old is v"
 }
 ```
+
+### 4. Run the Web UI
+
+```bash
+python3 web/app.py
+```
+Then open `http://localhost:7860` in your browser.
+
+---
+
+## Example Outputs
+
+### 🎤 Example 1 – Indian Accent  
+**URL:** [https://www.youtube.com/watch?v=BZ7vOwVrKDo](https://www.youtube.com/watch?v=BZ7vOwVrKDo)
+
+![Indian Accent Example](assets/indian-accent.png)
+
+### 🎤 Example 2 – Canadian Accent  
+**URL:** [https://www.youtube.com/watch?v=W2Jzkl8J2nM](https://www.youtube.com/watch?v=W2Jzkl8J2nM)
+
+![Canadian Accent Example](assets/canadian-accent.png)
+
+---
+
+## Known Bottlenecks
+
+- Whisper runs on CPU if no GPU is available — can be slow (~20s on CPU)
+- Video download + audio extraction depends on stable network and FFmpeg
+- Some accent misclassifications may occur for mixed/regional speakers
+- Web UI uses a 30-second middle segment — long videos may not be fully analyzed
+
+---
