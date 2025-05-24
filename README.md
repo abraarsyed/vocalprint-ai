@@ -35,6 +35,24 @@ VocalPrint AI is a CLI + web based tool that detects spoken English accents, sco
 
 ---
 
+## Project Structure
+
+```
+vocalprint-ai/
+├── core/
+│   ├── __init__.py
+│   ├── processor.py         # shared logic used by both CLI and web
+│   └── logger.py            # shared logger instance
+├── accent_detection_cli.py  # CLI entrypoint
+├── web/
+│   └── app.py               # Web UI via Gradio
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+
+---
+
 ## Quick Start
 
 ### 1. Install dependencies
