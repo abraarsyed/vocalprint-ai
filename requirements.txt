@@ -1,0 +1,10 @@
+torch>=2.0.0
+torchaudio>=2.0.0
+transformers>=4.38.0
+openai-whisper
+ffmpeg-python
+requests
+yt-dlp
+protobuf
+soundfile
+scipy
