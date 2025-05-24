@@ -107,7 +107,7 @@ Then open `http://localhost:7860` in your browser.
 ## Example Outputs
 
 ### 🎤 Example 1 – Indian Accent  
-**URL:** [https://www.youtube.com/watch?v=BZ7vOwVrKDo](https://www.youtube.com/watch?v=BZ7vOwVrKDo)
+**URL:** [https://www.youtube.com/watch?v=BZ7v0wVrKDo](https://www.youtube.com/watch?v=BZ7v0wVrKDo)
 
 ![Indian Accent Example](assets/indian-accent.png)
 
