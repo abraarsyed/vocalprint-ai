@@ -1,21 +1,37 @@
 # VocalPrint AI
 
-VocalPrint AI is a full-stack tool that detects spoken English accents, scores fluency, and transcribes speech from public video/audio sources.
-
-The current version is CLI-based. A web interface and deployment support will follow in the next phase.
+VocalPrint AI is a CLI + web based tool that detects spoken English accents, scores fluency, and transcribes speech from public video/audio sources.
 
 ---
 
-## Overview
+## Features
 
-This tool allows you to:
+- Detects common English accents:
+  - Indian, American, British, Australian, and more
+- Scores fluency based on actual speaking duration
+- Transcribes speech using OpenAI's Whisper model
+- Top-3 accent predictions with confidence values
+- Supports YouTube, Loom, and direct MP4 links
+- Web UI built using Gradio for fast testing
+- CLI and Web UI use a shared processing core
+- JSON output for easy API integration
 
-- Detect English accents such as Indian, British, American, Australian, Canadian
-- Get top-3 accent predictions with confidence percentages
-- Score English speaking fluency based on speaking time
-- Transcribe speech using OpenAI Whisper
-- Support input from public YouTube, Loom, or direct MP4 links
-- Output results in structured JSON
+---
+
+## Technical Highlights
+
+- **Models Used**:
+  - Whisper (for transcription + language detection)
+  - `dima806/english_accents_classification` (for accent prediction)
+
+- **Audio Segment Handling**:
+  - Only a 30-second segment is extracted from the middle of the video for analysis (to avoid intros and outros)
+  
+- **Transcript Handling**:
+  - Only the first 500 characters of the transcript are returned to keep the result clean
+
+- **Output**:
+  - Returns JSON with detected accent, confidence %, top-3 predictions, fluency score, language code, and sample transcript
 
 ---
 
@@ -24,13 +40,13 @@ This tool allows you to:
 ### 1. Install dependencies
 
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ### 2. Run the CLI tool
 
 ```bash
-python3 accent-detection-cli.py \            
+python3 accent_detection_cli.py \            
   --url "https://www.youtube.com/watch?v=W2Jzkl8J2nM" \ 
   --device cpu
 ```
